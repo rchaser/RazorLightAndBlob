@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorLightAndBlob", "RazorLightAndBlob\RazorLightAndBlob.csproj", "{7DE01525-22B0-44C0-8A9F-58A0C8A76BFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DE01525-22B0-44C0-8A9F-58A0C8A76BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE01525-22B0-44C0-8A9F-58A0C8A76BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE01525-22B0-44C0-8A9F-58A0C8A76BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE01525-22B0-44C0-8A9F-58A0C8A76BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5D78AD6-1D3B-4A65-BA5E-DFD03E2873BC}
+	EndGlobalSection
+EndGlobal
