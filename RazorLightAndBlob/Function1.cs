@@ -7,6 +7,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using RazorLight;
 
 namespace RazorLightAndBlob
 {
@@ -25,11 +26,32 @@ namespace RazorLightAndBlob
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             name = name ?? data?.name;
 
+            #region Razor
+
+            var engine = new RazorLightEngineBuilder()
+                // required to have a default RazorLightProject type,
+                // but not required to create a template from string.
+                .UseEmbeddedResourcesProject(typeof(ViewModel))
+                .UseMemoryCachingProvider()
+                .Build();
+
+            string template = "Hello, @Model.Name. Welcome to RazorLight repository";
+            ViewModel model = new ViewModel { Name = "John Doe" };
+
+            string result = await engine.CompileRenderStringAsync("templateKey", template, model);
+
+            #endregion
+
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                 : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(result);
         }
+    }
+
+    public class ViewModel
+    {
+        public string Name { get; set; }
     }
 }
